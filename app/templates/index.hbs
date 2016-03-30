@@ -1,11 +1,23 @@
 {{outlet}}
+<div class="row">
+  <div class="col-md-6">
+    <h2>Blog Posts:</h2>
+    {{#each model.post as |post|}}
+      {{#link-to 'single-post' post.id}}
+      {{ post-tile post = post}}
+      {{/link-to}}
+    {{/each}}
 
-{{#each model.post as |post|}}
-  {{#link-to 'single-post' post.id}}
-  {{ post-tile post = post}}
-  {{/link-to}}
-{{/each}}
+    {{add-post createRecord = 'createPost'}}
+  </div>
 
-{{add-post createRecord = 'createPost'}}
+  <div class="col-md-6">
+    <h2>Comments:</h2>
+    {{#each model.comment as |comment|}}
+      {{comment.email}}
+      {{comment.text}}
+    {{/each}}
 
-<h3 {{action 'saveComment'}}>Click me! I generate a comment!</h3>
+  </div>
+
+</div>
