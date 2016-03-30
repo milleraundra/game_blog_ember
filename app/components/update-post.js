@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  isUpdateFormShowing: false,
+
   actions: {
     sendUpdate(post) {
       var params = {
@@ -11,6 +13,10 @@ export default Ember.Component.extend({
         image: this.get('image')
       };
       this.sendAction('update', post, params);
+      this.set('isUpdateFormShowing', false);
+    },
+    showForm() {
+      this.set('isUpdateFormShowing', true);
     }
   }
 });

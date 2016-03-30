@@ -1,3 +1,4 @@
+{{#if isUpdateFormShowing}}
 <div class="form">
   <h3>Update post</h3>
   <form>
@@ -22,6 +23,9 @@
       <label for="image">Image</label>
       {{input type="text" value=post.image }}
     </div>
-    <button class="btn btn-success"{{ action 'sendUpdate' post}}>Post Blog</button>
+    <button class="btn btn-success"{{ action 'sendUpdate' post}}>Update Blog</button>
   </form>
 </div>
+{{else}}
+  <button class="btn btn-success" {{action 'showForm' }}>Update</button>
+{{/if}}
