@@ -1,3 +1,7 @@
-img {
+.post-img {
   width: 200px;
+}
+
+.single-post-img {
+  width: 400px;
 }
