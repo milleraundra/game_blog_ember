@@ -1,1 +1,12 @@
-{{yield}}
+<h2>Add Comment:</h2>
+<form>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    {{input type=email}}
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    {{input type=comment}}
+  </div>
+  <button class="btn btn-primary"{{ action ''}}>Add Comment</button>
+</form>
