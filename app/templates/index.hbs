@@ -1,9 +1,11 @@
 {{outlet}}
 
-{{#each model as |post|}}
+{{#each model.post as |post|}}
   {{#link-to 'single-post' post.id}}
   {{ post-tile post = post}}
   {{/link-to}}
 {{/each}}
 
 {{add-post createRecord = 'createPost'}}
+
+<h3 {{action 'saveComment'}}>Click me! I generate a comment!</h3>

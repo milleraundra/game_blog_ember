@@ -2,7 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('post');
+    return Ember.RSVP.hash({
+      post: this.store.findAll('post'),
+      comment: this.store.findAll('comment')
+    });
   },
   actions: {
     saveData() {
@@ -18,10 +21,19 @@ export default Ember.Route.extend({
       newPost.save();
       this.transitionTo('index');
     },
+    saveComment() {
+      var params = {
+        email: 'yourexample@domain.com',
+        text: 'I love this game! You should come play with me sometime.'
+      }
+      var newComment = this.store.createRecord('comment', params);
+      newComment.save();
+      this.transitionTo('index');
+    },
     createPost(params) {
       var newPost = this.store.createRecord('post', params);
       newPost.save();
-      this.transitionTo('index');      
+      this.transitionTo('index');
     }
   }
 });
