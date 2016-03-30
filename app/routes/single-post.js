@@ -13,6 +13,12 @@ export default Ember.Route.extend({
       });
       post.save();
       this.transitionTo('single-post');
+    },
+    deletePost(post) {
+      if(confirm("Are you sure you want to delete this post?")) {
+        post.destroyRecord();
+        this.transitionTo('index');
+      }
     }
   }
 });
