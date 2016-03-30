@@ -2,11 +2,11 @@
 <form>
   <div class="form-group">
     <label for="email">Email:</label>
-    {{input type=email}}
+    {{input type="email" value=email}}
   </div>
   <div class="form-group">
     <label for="comment">Comment:</label>
-    {{input type=comment}}
+    {{input type="text" value=comment}}
   </div>
-  <button class="btn btn-primary"{{ action ''}}>Add Comment</button>
+  <button class="btn btn-primary"{{ action 'newComment' }}>Add Comment</button>
 </form>

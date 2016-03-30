@@ -5,4 +5,4 @@
 <button class="btn btn-danger" {{ action 'deletePost' model}}>Delete</button>
 <br>
 <br>
-{{new-comment}}
+{{new-comment sendNewComment='createNewComment' post=model}}

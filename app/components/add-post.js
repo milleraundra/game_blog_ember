@@ -12,7 +12,8 @@ export default Ember.Component.extend({
         body: this.get('body'),
         date: this.get('date'),
         author: this.get('author'),
-        image: this.get('image')
+        image: this.get('image'),
+        comments: []
       };
       this.sendAction('createRecord', params);
       this.set('isCreatePostShowing', false);
