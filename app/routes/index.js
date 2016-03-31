@@ -4,35 +4,22 @@ export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
       posts: this.store.findAll('post'),
-      comments: this.store.findAll('comment')
+      comments: this.store.findAll('comment'),
+      allPosts: this.store.findAll('post').then(function(posts) {
+        posts.forEach(function(post) {
+          // for (var i = 0; i < array.length; i++) {
+          //   array[i]
+          // }
+          // if(post.comments.length >= 1) {
+            console.log(post.comments);
+          // }
+        })
+        //var allPosts = post.get('comments');
+      })
+
     });
   },
   actions: {
-    // saveData() {
-    //   var params = {
-    //     title: "New Game: Blokus Trigon",
-    //     body: "Lorem ipsum dolor si amet",
-    //     date: "2016-03-31",
-    //     author: "Torrence Stratton",
-    //     image: "http://lorempixel.com/400/200"
-    //   };
-    //
-    //   var newPost = this.store.createRecord('post', params);
-    //   newPost.save();
-    //   this.transitionTo('index');
-    // },
-    // saveComment() {
-    //   var params = {
-    //     email: 'yourexample@domain.com',
-    //     text: 'I love this game! You should come play with me sometime.',
-    //     post: {}
-    //   };
-    //   console.log("SaveComment, " + params.email);
-    //   console.log("SaveComment, " + params.text);
-    //   var newComment = this.store.createRecord('comment', params);
-    //   newComment.save();
-    //   this.transitionTo('index');
-    // },
     createPost(params) {
       var newPost = this.store.createRecord('post', params);
       newPost.save();
@@ -40,3 +27,5 @@ export default Ember.Route.extend({
     }
   }
 });
+
+// https://guides.emberjs.com/v2.4.0/models/finding-records/
