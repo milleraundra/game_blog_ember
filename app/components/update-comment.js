@@ -6,8 +6,8 @@ export default Ember.Component.extend({
   actions: {
     updateComment(comment) {
       var params = {
-        email: this.get('email'),
-        text: this.get('text'),
+        email: this.get('email') ? this.get('email') : "",
+        text: this.get('text') ? this.get('text') : "",
         post: this.get('comment.post')
       };
       console.log(params);

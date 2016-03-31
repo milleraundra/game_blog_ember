@@ -6,5 +6,6 @@ export default DS.Model.extend({
     date: DS.attr(),
     author: DS.attr(),
     image: DS.attr(),
+    tag: DS.attr(),
     comments: DS.hasMany('comment', { async: true})
 });

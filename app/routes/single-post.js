@@ -15,7 +15,6 @@ export default Ember.Route.extend({
       this.transitionTo('single-post');
     },
     deletePost(post) {
-      debugger;
       var comment_deletions = post.get('comments').map(function(comment) {
         return comment.destroyRecord();
       });

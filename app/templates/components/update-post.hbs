@@ -23,6 +23,12 @@
       <label for="image">Image</label>
       {{input type="text" value=post.image }}
     </div>
+    <select {{action 'selectTag' on='change'}}>
+      <option value="coop">Co-op</option>
+      <option value="twoPlayer">Two Player</option>
+      <option value="abstract">Abstract</option>
+      <option value="torRant">Torrence Rant</option>
+    </select>
     <button class="btn btn-success"{{ action 'sendUpdate' post}}>Update Blog</button>
   </form>
 </div>
