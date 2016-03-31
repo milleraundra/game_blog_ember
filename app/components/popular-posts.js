@@ -6,12 +6,14 @@ export default Ember.Component.extend({
       return post.get('comments.length') > 1;
     });
   }),
-
   actions: {
     viewInput(allposts) {
       allposts.forEach(function(post) {
         console.log(post);
       });
+    },
+    viewPopularPost(post) {
+      this.sendAction('viewPopularPost', post);
     }
   }
 

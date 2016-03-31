@@ -19,6 +19,9 @@ export default Ember.Route.extend({
       var newPost = this.store.createRecord('post', params);
       newPost.save();
       this.transitionTo('index');
+    },
+    viewPopularPost(post) {
+      this.transitionTo('single-post', post.id);
     }
   }
 });

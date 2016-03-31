@@ -1,5 +1,6 @@
 <!-- <h3 {{ action 'viewInput' allPosts}} >Heck, yeah!</h3> -->
-
+<ul>
 {{#each topPosts as |post|}}
-  {{post.title}}
+  <li class="popular-post"><a {{action 'viewPopularPost' post}}>{{post.title}}</a></li>
 {{/each}}
+</ul>
