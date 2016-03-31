@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     },
     createRecord() {
       var params = {
-        title: this.get('title'),
+        title: this.get('title') ? this.get('title') : "",
         body: this.get('body'),
         date: this.get('date'),
         author: this.get('author'),

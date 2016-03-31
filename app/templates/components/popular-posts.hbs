@@ -1,1 +1,5 @@
-<h3 {{ action 'viewInput' allPosts}} >Heck, yeah!</h3>
+<!-- <h3 {{ action 'viewInput' allPosts}} >Heck, yeah!</h3> -->
+
+{{#each topPosts as |post|}}
+  {{post.title}}
+{{/each}}
