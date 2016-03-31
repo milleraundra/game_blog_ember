@@ -1,0 +1,10 @@
+{{#if updateCommentFormIsShowing}}
+  <h2>Update Comment</h2>
+  <label for="email">Email</label>
+  {{input type="text" value=email}}
+  <label for="text">Comment</label>
+  {{input type="text" value=text}}
+  <button class="btn btn danger" {{action 'updateComment' comment}}>Submit</button>
+{{else}}
+  <button class="btn btn info" {{action 'newComment'}}>Update Comment</button>
+{{/if}}

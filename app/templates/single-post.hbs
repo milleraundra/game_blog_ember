@@ -9,5 +9,5 @@
 
 <h2>Comments</h2>
 {{#each model.comments as |comment|}}
-  {{comment-tile comment=comment}}
+  {{comment-tile comment=comment updateCommentOnPost="updateCommentOnPost"}}
 {{/each}}
