@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('post', params.post_id)
+    return this.store.findRecord('post', params.post_id);
   },
   actions: {
     updatePost(post, params) {
@@ -22,15 +22,13 @@ export default Ember.Route.extend({
     },
     createNewComment(params) {
       var newComment = this.store.createRecord('comment', params);
-      newComment.save();
+      var post = params.post;
+      console.log(post);
+      post.get('comments').addObject(newComment);
+      newComment.save().then(function() {
+        return post.save();
+      });
       this.transitionTo('single-post');
-      // var post = params.post;
-      // console.log(post);
-      // post.get('comments').addObject(newComment);
-      // newComment.save().then(function() {
-      //   return post.save();
-      // });
-      // this.transitionTo('single-post');
     }
   }
 });

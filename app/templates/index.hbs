@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-md-6">
     <h2>Blog Posts:</h2>
-    {{#each model.post as |post|}}
+    {{#each model.posts as |post|}}
       {{#link-to 'single-post' post.id}}
       {{ post-tile post = post}}
       {{/link-to}}
@@ -13,7 +13,10 @@
 
   <div class="col-md-6">
     <h2>Comments:</h2>
-    {{#each model.comment as |comment|}}
+
+      <!-- <h3{{action 'saveComment'}}>Click me to create comment</h3> -->
+
+    {{#each model.comments as |comment|}}
       {{comment.email}}
       {{comment.text}}
     {{/each}}

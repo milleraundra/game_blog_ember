@@ -5,9 +5,10 @@ export default Ember.Component.extend({
     newComment() {
       var params = {
         email: this.get('email'),
-        comment: this.get('comment'),
+        text: this.get('comment'),
         post: this.get('post')
       };
+      console.log(params);
       this.sendAction('sendNewComment', params);
     }
   }

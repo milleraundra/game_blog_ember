@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
-      post: this.store.findAll('post'),
-      comment: this.store.findAll('comment')
+      posts: this.store.findAll('post'),
+      comments: this.store.findAll('comment')
     });
   },
   actions: {
@@ -24,8 +24,11 @@ export default Ember.Route.extend({
     // saveComment() {
     //   var params = {
     //     email: 'yourexample@domain.com',
-    //     text: 'I love this game! You should come play with me sometime.'
-    //   }
+    //     text: 'I love this game! You should come play with me sometime.',
+    //     post: {}
+    //   };
+    //   console.log("SaveComment, " + params.email);
+    //   console.log("SaveComment, " + params.text);
     //   var newComment = this.store.createRecord('comment', params);
     //   newComment.save();
     //   this.transitionTo('index');
