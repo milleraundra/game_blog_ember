@@ -6,3 +6,8 @@
 <br>
 <br>
 {{new-comment sendNewComment='createNewComment' post=model}}
+
+<h2>Comments</h2>
+{{#each model.comments as |comment|}}
+  {{comment-tile comment=comment}}
+{{/each}}
