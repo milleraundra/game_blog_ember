@@ -38,6 +38,12 @@ export default Ember.Route.extend({
       });
         comment.save();
         this.transitionTo('single-post');
+    },
+    deleteCommentOnPost(comment, post) {
+      comment.destroyRecord().then(function() {
+        post.save();
+      });
+      this.transitionTo('single-post');
     }
   }
 });
